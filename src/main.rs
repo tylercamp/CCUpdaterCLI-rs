@@ -1,8 +1,11 @@
 #[macro_use]
 extern crate clap;
 
+extern crate serde;
+
 mod cmd;
 mod features;
+mod model;
 
 use std::process;
 use cmd::CLIBaseOptions;

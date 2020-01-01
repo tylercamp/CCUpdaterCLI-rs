@@ -1,26 +1,28 @@
-#[serde(Deserialize)]
+use std::collections::HashMap;
+use serde::{Deserialize};
+
+#[derive(Deserialize)]
 pub struct ModDB {
-    pub mods: HashMap<&str, RemoteModPackage>
+    pub mods: HashMap<String, RemoteModPackage>
 }
 
-#[serde(Deserialize)]
+#[derive(Deserialize)]
 pub enum ModHash {
-    #[serde(rename = "sha256")]
     Sha256(String)
 }
 
-#[serde(Deserialize)]
+#[derive(Deserialize)]
 pub struct ModHomepage {
     pub name: String,
     pub url: String
 }
 
-#[serde(Deserialize)]
+#[derive(Deserialize)]
 pub struct RemoteModPackage {
     pub name: String,
     pub description: String,
     pub license: String,
-    pub page: [ModHomepage],
+    pub page: Vec<ModHomepage>,
     pub archive_link: String,
     pub hash: ModHash,
     pub version: String
@@ -31,13 +33,11 @@ pub struct CrossCodeInstallation {
 
     pub game_version: String,
     pub loader_version: Option<String>,
-
-    pub installed_mods: HashMap<&str, InstalledModPackage>,
 }
 
 pub struct InstalledModPackage {
     pub name: String,
     pub base_path: String,
     pub version: String,
-    pub dependencies: HashMap<&str, String>
+    pub dependencies: HashMap<String, String>
 }

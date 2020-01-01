@@ -1,7 +1,7 @@
 [package]
 name = "ccupdater_cli_rs"
 version = "0.1.0"
-authors = ["Ignacio <nnubes256@gmail.com>"]
+authors = ["CCDirectLink Contributors"]
 license = "MIT"
 
 [dependencies]

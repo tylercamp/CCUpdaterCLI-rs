@@ -1,0 +1,7 @@
+[package]
+name = "CCUpdaterCLI-rs"
+version = "0.1.0"
+authors = ["Ignacio <nnubes256@gmail.com>"]
+license = "MIT"
+
+[dependencies]

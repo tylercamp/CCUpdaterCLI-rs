@@ -6,6 +6,8 @@ extern crate serde;
 mod cmd;
 mod features;
 mod model;
+mod remote;
+mod local;
 
 use std::process;
 use cmd::CLIBaseOptions;
